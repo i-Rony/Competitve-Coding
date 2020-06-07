@@ -71,8 +71,6 @@ void magical_park(char a[][100], int m, int n, int k, int s){
     }
 }   
 
-
-
 int main() {
 
     int m, n, k, s;
