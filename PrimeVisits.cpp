@@ -27,7 +27,7 @@ For the second testcase , he chooses countries with numbers 11,13,17 and 19.
 
 */
 
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 

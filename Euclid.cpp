@@ -27,7 +27,7 @@ The largest number that divides both N1 and N2 is called the GCD of N1 and N2.
 
 */
 
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
