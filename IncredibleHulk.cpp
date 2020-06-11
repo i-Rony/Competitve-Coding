@@ -32,6 +32,7 @@ Let total steps is n, find the nearest integer which is of power 2 and less then
 let it would be k. now remaining steps to cover is n-k and result = 1 + min steps for (n-k) remaining steps.
 
 */
+
 #include <iostream>
 
 using namespace std;

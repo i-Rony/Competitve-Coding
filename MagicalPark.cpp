@@ -45,6 +45,7 @@ His strength left is 13. Since this is clearly greater than K=5, his escape was 
 Piyush escaped with final strength = 13.
 
 */
+
 #include <iostream>
 
 using namespace std;
