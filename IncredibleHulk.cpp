@@ -37,23 +37,23 @@ let it would be k. now remaining steps to cover is n-k and result = 1 + min step
 
 using namespace std;
 
-// int countBits(int n){
-//     int a = 0;
-//     while(n > 0){
-//         a = a + (n & 1);
-//         n = n >> 1;
-//     }
-//     return a;
-// }
+int countBits(int n){
+    int a = 0;
+    while(n > 0){
+        a = a + (n & 1);
+        n = n >> 1;
+    }
+    return a;
+}
 
-// int countBitsFast(int n){
-//     int a = 0;
-//     while(n > 0){
-//         n = n & (n-1);
-//         a++;
-//     }
-//     return a;
-// }
+int countBitsFast(int n){
+    int a = 0;
+    while(n > 0){
+        n = n & (n-1);
+        a++;
+    }
+    return a;
+}
 
 int main(){
 
