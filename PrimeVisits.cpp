@@ -18,9 +18,11 @@ Sample Input
 2
 1 10
 11 20
+
 Sample Output
 4
 4
+
 Explanation
 PM Modi chooses countries with numbers 2,3,5 and 7 for the first testcase.
 For the second testcase , he chooses countries with numbers 11,13,17 and 19.

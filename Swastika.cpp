@@ -21,6 +21,7 @@ Print the required pattern.
 
 Sample Input
 7
+
 Sample Output
 *  ****
 *  *

@@ -20,8 +20,10 @@ Output a single integer which is the GCD of the given integers.
 Sample Input
 16 
 24
+
 Sample Output
 8
+
 Explanation
 The largest number that divides both N1 and N2 is called the GCD of N1 and N2.
 

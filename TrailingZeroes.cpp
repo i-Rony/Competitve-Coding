@@ -12,8 +12,10 @@ A single integer denoting the count of trailing zeroes in N!
 
 Sample Input
 5
+
 Sample Output
 1
+
 Explanation
 Factorial of 5 is 120 which has one trailing 0.
 

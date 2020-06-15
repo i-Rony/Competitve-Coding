@@ -22,9 +22,11 @@ Sample Input
 1 1 1 1 1
 5
 5 5 5 5 5
+
 Sample Output
 1
 15
+
 Explanation
 In first test case, there is only one sub-array [1, 1, 1, 1, 1], such that 1+1+1+1+1=5, which is divisible by N=5
 

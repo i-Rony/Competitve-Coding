@@ -43,7 +43,7 @@ int findKey(int a[], int n, int key){
             return mid;
         }
         else if(a[start] <= a[mid]){
-            if(key >= a[start] and key <= a[mid]){
+            if(key >= a[start] && key <= a[mid]){
                 end = mid - 1;
             }
             else {
@@ -51,7 +51,7 @@ int findKey(int a[], int n, int key){
             }
         }
         else {
-            if(key >= a[mid] and key <= a[end]){
+            if(key >= a[mid] && key <= a[end]){
                 start = mid + 1;
             } 
             else {
