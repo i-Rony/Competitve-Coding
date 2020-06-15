@@ -16,7 +16,7 @@
 using namespace std;
 
 // Top Down Approach
-int minSteps(int n, int dp[]){
+int minSteps_TD(int n, int dp[]){
 
     if(n == 1){
         return 0;
@@ -32,17 +32,40 @@ int minSteps(int n, int dp[]){
     op1 = op2 = op3 = INT_MAX;
 
     if(n % 3 == 0){
-        op1 = minSteps(n/3, dp);
+        op1 = minSteps_TD(n/3, dp);
     }
     if(n % 2 == 0){
-        op2 = minSteps(n/2, dp);
+        op2 = minSteps_TD(n/2, dp);
     }
-    op3 = minSteps(n-1, dp);
+    op3 = minSteps_TD(n-1, dp);
 
     int ans = min(min(op1, op2), op3) + 1;
 
     return dp[n] = ans;
 
+}
+
+// Bottom Up Approach
+int minSteps_BU(int n){
+    
+    int dp[100] = {0};
+
+    for(int i = 2; i <= n; i++){
+        
+        int op1, op2, op3;
+        op1 = op2 = op3 = INT_MAX;
+
+        if(n % 3 == 0){
+            op1 = dp[i/3];
+        }
+        if(n % 2 == 0){
+            op2 = dp[i/2];
+        }
+        op3 = dp[i-1];
+
+        dp[i] = min(min(op1, op2), op3) + 1;
+    }
+    return dp[n];
 }
 
 int main(){
@@ -51,7 +74,8 @@ int main(){
     cin >> n;
     int dp[100] = {0};
     
-    cout << minSteps(n, dp);
+    cout << minSteps_TD(n, dp) << endl;
+    cout << minSteps_BU(n) << endl;
 
     return 0;
 }
