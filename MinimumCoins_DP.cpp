@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// Top Down Approach
 int minCoins_TD(int n, int coins[], int t, int dp[]){
 
     if(n == 0){
@@ -27,6 +28,25 @@ int minCoins_TD(int n, int coins[], int t, int dp[]){
 
 }
 
+// Bottom Up Approach
+int minCoins_BU(int n, int coins[], int t){
+     
+    int dp[100] = {0};
+
+    for(int i = 1; i <= n; i++){
+        dp[i] = INT_MAX;
+        for(int j = 0; j < t; j++){
+            if(i-coins[j] >= 0){
+                int subprob = dp[i - coins[j]];
+                dp[i] = min(dp[i], subprob + 1);
+            }
+        }
+    }
+
+    return dp[n];
+
+}
+
 int main(){
 
     int n;
@@ -44,8 +64,9 @@ int main(){
 
     int dp[100] = {0};
 
-    cout << "The minimum no. of coins are: ";
+    cout << "The minimum no. of coins are: " << endl;
     cout << minCoins_TD(n, coins, t, dp) << endl;
+    cout << minCoins_BU(n, coins, t) << endl;
 
     return 0;
 }
