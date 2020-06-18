@@ -7,6 +7,8 @@ using namespace std;
 
 int n = 4;
 
+int dp[16][4];
+
 int dist[10][10] = {
     {0, 20, 42, 25},
     {20, 0, 30, 34},
@@ -22,6 +24,10 @@ int tsp(int mask, int pos){
         return dist[pos][0];
     }
 
+    if(dp[mask][pos] != -1){
+        return dp[mask][pos];
+    }
+
     int ans = INT_MAX;
 
     for(int city = 0; city < n; city++){
@@ -31,9 +37,17 @@ int tsp(int mask, int pos){
         }
     }
 
+    return dp[mask][pos] = ans;
 }
 
 int main(){
-    cout << tsp(1,0) << endl;
+
+    for(int i = 0; i < (1<<n); i++){
+        for(int j = 0; j < n; j++){
+            dp[i][j] = -1;
+        }
+    }
+
+    cout << "Mininum Weight Hamiltonian Path Costs: " << tsp(1,0) << endl;
     return 0; 
 }
