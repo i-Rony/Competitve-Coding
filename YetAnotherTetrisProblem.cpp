@@ -119,7 +119,7 @@ int32_t main()
     w(t){
         int n;
         cin >> n;
-        mk(arr, n, int);
+        mk(arr, n+1, int);
         int cnt[2] = {};
 
         for(int i = 1; i <= n; i++){
