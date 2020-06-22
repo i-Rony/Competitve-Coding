@@ -80,9 +80,6 @@ the array a has no subsequences of length at least 3 which are palindromes.
 
 #include<bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
-#include <cstring>
-#include <string>
-#include <map>
 using namespace __gnu_pbds;
 using namespace std;
  
@@ -103,6 +100,7 @@ using namespace std;
 #define ps(x,y)         fixed<<setprecision(y)<<x
 #define mk(arr,n,type)  type *arr=new type[n];
 #define w(x)            int x; cin>>x; while(x--)
+#define pw(b,p)         pow(b,p) + 0.1
 mt19937                 rng(chrono::steady_clock::now().time_since_epoch().count());
  
 typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> pbds;
@@ -110,48 +108,48 @@ typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_
  
 void c_p_c()
 {
-    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+	ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 #endif
 }
  
 int32_t main()
 {
-    c_p_c();
-    w(t){
-        int n;
+	c_p_c();
+	w(t){
+
+		int n; 
         cin >> n;
-        mk(arr, n+1, int);
-
-        for(int i = 1; i <= n; i++){
-            cin >> arr[i];
-        }
-
-        string ans = "NO";
-
-        map<int, vi> idv;
-
-        for(int i = 1; i <= n; ++i){
-            idv[arr[i].pb(i)];
-        }
-
-        for(auto el : idv){
-            if(el.ss.size() >= 3){
-                ans = "YES";
-                break;
-            }
-        }
-
-        for(auto el : idv){
-            if(el.ss.size() == 2 && el.ss[0] != el.ss[1] - 1){
-                ans = "YES";
-                break;
-            }
-        }
-
-        cout << ans << '\n';
-    }
-    return 0;
+		mk(arr, n + 1, int);
+ 
+		for (int i = 1; i <= n; ++i){
+			cin >> arr[i];
+		}
+ 
+		string ans = "NO";
+ 
+		map<int, vi> idv;
+ 
+		for (int i = 1; i <= n; ++i)
+			idv[arr[i]].pb(i);
+ 
+		for (auto el : idv){
+			if (el.ss.size() >= 3){
+				ans = "YES";
+				break;
+			}
+		}
+        
+		for (auto el : idv){
+			if (el.ss.size() == 2 && el.ss[0] != el.ss[1] - 1){
+				ans = "YES";
+				break;
+			}
+		}
+ 
+		cout << ans << '\n';
+	}
+	return 0;
 }
