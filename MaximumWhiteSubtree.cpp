@@ -62,7 +62,6 @@ output
 0 -1 1 -1 
 
 Note
-
 The first example is shown below:
 
 The black vertices have bold borders.
