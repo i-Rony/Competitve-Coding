@@ -80,6 +80,7 @@ In the first test case, one valid exercising walk is
 (0,0) → (−1,0) → (−2,0) → (−2,1) → (−2,2) → (−1,2) → (0,2) → (0,1) → (0,0) → (−1,0)
 
 */
+
 #include<bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 using namespace __gnu_pbds;
