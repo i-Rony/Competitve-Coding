@@ -97,6 +97,19 @@ typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_
 int32_t main()
 {
     FIO;
-    
+    int k; 
+    cin >> k;
+ 
+	if (!k){
+		cout << 1 << ' ' << 1 << '\n' << 100 << '\n';
+    } else {
+		cout << 3 << ' ' << 3 << '\n';
+		int all_one = (1 << 18) - 1;
+		int pw17 = 1 << 17;
+ 
+		cout << all_one << ' ' << all_one << ' ' << pw17 << '\n';
+		cout << all_one << ' ' << k << ' ' << pw17 + k << '\n';
+		cout << pw17 << ' ' << pw17 + k << ' ' << k << '\n';
+	}
     return 0;
 }
