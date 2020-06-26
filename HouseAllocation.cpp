@@ -115,5 +115,7 @@ int32_t main(){
         cout << "Case #" << tc << ": " << ans << endl;
 
     }
+
+    return 0;
 }
 
