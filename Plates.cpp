@@ -153,7 +153,7 @@ int32_t main(){
                 pref[i][j] = pref[i][j - 1] + a[i][j];
             }
         }
-        memset(cache, -1, sizeof(-1));
+        memset(cache, -1, sizeof(cache));
         int ans = rec(1, 0);
         cout << "Case #" << tc << ": " << ans << '\n';
     }
