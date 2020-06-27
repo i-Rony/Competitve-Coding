@@ -103,7 +103,6 @@ If we observe closely, this is similar to the 0-1 Knapsack Problem with some add
 To conclude, the overall time complexity would be O(N*P*K).
 
 */
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -148,15 +147,15 @@ int32_t main(){
         tc++;
         
         cin >> n >> k >> p;
-        for(int i = ; i <= n; i++){
+        for(int i = 1; i <= n; i++){
             for(int j = 1; j <= k; j++){
                 cin >> a[i][j];
-                pref[i][j] = pref[i][j - 1] + a[i][j]
+                pref[i][j] = pref[i][j - 1] + a[i][j];
             }
         }
         memset(cache, -1, sizeof(-1));
         int ans = rec(1, 0);
-        cout << "Case #" << tc << ": " << ans << endl;
+        cout << "Case #" << tc << ": " << ans << '\n';
     }
     return 0;   
 }
