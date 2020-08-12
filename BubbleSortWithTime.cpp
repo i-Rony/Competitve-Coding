@@ -1,21 +1,19 @@
 #include <iostream>
 #include <stdlib.h>
-#include <ctime>
-
-using namespace std;
+#include <algorithm>
+#include <chrono>
 
 void bubbleSort(int a[], int n){
     for(int i = 0; i < n - 1; i++){
         for(int j = 0; j < n - i - 1; j++){
             if(a[j] > a[j+1]){
-                swap(a[j], a[j+1]);
+                std::swap(a[j], a[j+1]);
             }
         }
     }
 }
 
 int arr[10000];
-time_t starttime, endtime;
 
 void generateArray(){
     for(int i = 0; i < 10000; i++){
@@ -24,10 +22,10 @@ void generateArray(){
 }
 
 int main(){
-    starttime=time(NULL);
+    auto start = std::chrono::high_resolution_clock::now();
     bubbleSort(arr, 10000);
-    endtime=time(NULL);
-    double diff = difftime(endtime, starttime);
-    printf("%lf",diff);
+    auto finish = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double, std::milli> elapsed = finish - start;
+    std::cout << "Elapsed Time: " << elapsed.count() << " milliseconds" << std::endl;
     return 0;
 }
